@@ -57,7 +57,7 @@ header{
     width: 275px;
 }
 
-/* navbar */
+/* navbar 
 #navbar img{
     width: 40px;
 }
@@ -75,7 +75,7 @@ header{
 
 #navbar a:hover{
     color: #F2A340;
-}
+}*/
 
 /* Search Container*/
 #search-container{
@@ -232,7 +232,7 @@ header{
     margin-top: 20px;
 }
 
-/* Footer*/
+/* Footer
 footer {
     text-align: center;
     background-color: #353E48;
@@ -246,3 +246,4 @@ footer {
 footer p {
     margin-bottom: 0;
 }
+*/
