@@ -23,7 +23,7 @@
 
     </head>
     <body>
-        <header>
+        {{-- <header>
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="collapse navbar-collapse" id="navbar">
                     <a href="/" class="navbar-brand">
@@ -63,7 +63,7 @@
                     </ul>  
                 </div>    
             </nav>    
-        </header>    
+        </header>     --}}
         <main>
             <div class="container-fluid">
                 <div calss="row">
@@ -74,9 +74,9 @@
                 </div>    
             </div>
         </main>    
-        <footer>
+        {{-- <footer>
             <p>HDC Events &copy; 2020</p>
-        </footer>  
+        </footer>   --}}
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>  
     </body>
 </html>
