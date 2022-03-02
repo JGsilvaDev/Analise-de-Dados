@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*oioi*/
+
 use App\Http\Controllers\EventController;
 
 Route::get('/', [EventController::class, 'index']); 
