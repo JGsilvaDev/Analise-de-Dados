@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "..\\.."
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\..\\..\\..\\xampp\\jquery"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "jquery"
+	}
+}
