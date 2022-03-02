@@ -7,18 +7,27 @@
     <div id="search-container" class="col-md-12">
         <h1>Pesquisar</h1>
         <form action="/" method="GET">
-            <input type="text" id="search" name="search" class="form-control" placeholder="Procurar">   
-        </form>    
+            <input type="text" id="search" name="search" class="form-control" placeholder="Procurar">
+        </form>
+        <p></p>
+
     </div>
     <div id="events-container" class="col-md-12">
+
        @if($search)
-        <h2>Buscando por: {{ $search }} </h2> 
+        <h2>Buscando por: {{ $search }} </h2>
+
        @endif
         <div id="cards-container" class="row">
+
             @if(count($events) == 0 && $search)
-                <p>Não foi possivel encontrar nenhum evento com {{ $search }}! <a href="/">Voltar a pagina principal</a></p>
+        <p>Não foi possivel encontrar nenhum evento com {{ $search }}!</p>
+        <p>        <a button type="button" id="voltar" class="btn btn-dark" a href="/" >Voltar para página inicial</a></p>
+
+
+
             @elseif(count($events) == 0)
-                <p>Não há eventos disponiveis</p>
+                <p></p>
             @endif
         </div>
     </div>
