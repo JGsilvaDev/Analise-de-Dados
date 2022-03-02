@@ -1,27 +1,40 @@
 /* General */
+
+/*
 * {
     font-family: "Roboto";
 }
+*/
 
 #search-container h1 {
     font-size: 60px;
-    font-family: "Arial";
-    color: blueviolet;
+    font-family: "Courier New";
 }
 
 body {
     min-height: 100vh;
     padding-bottom: 100px;
     position: relative;
-    background-color: rgb(34, 32, 32);
+    background: rgb(63, 94, 251);
+    background: radial-gradient(
+        circle,
+        rgba(63, 94, 251, 1) 0%,
+        rgba(252, 70, 107, 1) 100%
+    );
+    font-family: "Courier New";
 }
 
-/*
-header {
-    background-color: rgb(194, 35, 35);
-    border-bottom: 1px solid #ccc;
+#cards-container #voltar {
+    color: rgb(255, 255, 255);
+    background-color: rgba(252, 70, 107, 1);
+    border-radius: 100px;
+    font-family: "Didot";
 }
-*/
+
+#cards-container {
+    color: #ffffff;
+    text-align: center;
+}
 
 .row {
     margin: 0;
@@ -31,79 +44,32 @@ header {
     padding: 0;
 }
 
-.btn-primary {
-    background-color: #f2a340;
-    border: 2px solid #c28008;
-}
-
-.btn-primary:hover {
-    background-color: #c28008;
-    border-color: #c28008;
-}
-
-.msg {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
-    width: 100%;
-    margin-bottom: 0px;
-    text-align: center;
-    padding: 10px;
-}
-
-#info-container .already-joined-msg {
-    margin: 15px 0;
-    color: #004085;
-    background-color: #cce5ff;
-    border: 1px solid #b8daff;
-    padding: 10px;
-    width: 275px;
-}
-
-/* navbar
-#navbar img{
-    width: 40px;
-}
-
-#navbar{
-    justify-content: space-between;
-    background-color: #fff;
-    padding: 5px 0;
-}
-
-#navbar a{
-    font-size: 14px;
-    color: #757575;
-}
-
-#navbar a:hover{
-    color: #F2A340;
-}*/
-
 /* Search Container*/
 #search-container {
-    background-image: url("../img/banner.jpg");
     background-size: cover;
     background-position: center;
-    height: 400px;
-    padding: 50px;
+    height: 300px;
+    padding: 140px;
     text-align: center;
+    margin-bottom: 0px;
+    font-family: "Didot";
 }
 
 #search-container h1 {
     color: #ffffff;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     font-weight: 900;
 }
 
 #search-container form {
-    width: 50%;
+    width: 65%;
     margin: 0 auto;
 }
 
 /* Event List */
 #events-container {
     padding: 50px;
+    text-align: center;
 }
 
 #events-container h2 {
@@ -114,11 +80,6 @@ header {
 #events-container .subtitle {
     color: #ffffff;
     margin-bottom: 30px;
-}
-
-#cards-container {
-    display: flex;
-    color: #ffffff;
 }
 
 #events-container .card {
