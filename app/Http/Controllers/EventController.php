@@ -27,6 +27,16 @@ class EventController extends Controller
 
     }
 
+    public function dados(){
+
+        $dados = fopen("\Users\João Gabriel\Downloads\ProjetoPII-main\public\json", "r");
+
+        var_dump(json_decode($dados));
+        
+
+    }
+
+
     public function create(){
         return view('events.create');
     }
