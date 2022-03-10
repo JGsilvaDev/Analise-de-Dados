@@ -22,17 +22,17 @@ class EventController extends Controller
         }else{
             $events = Event::all();
         }
-        
+
         return view('welcome',[ 'events' => $events, 'search'=> $search]);
 
     }
 
     public function dados(){
 
-        $dados = fopen("\Users\João Gabriel\Downloads\ProjetoPII-main\public\json", "r");
+        $dados = fopen("GitHub/public/json/dado.php", "r");
 
         var_dump(json_decode($dados));
-        
+
 
     }
 
@@ -84,7 +84,7 @@ class EventController extends Controller
         $hasUserJoined = false;
 
         if($user){
-            
+
             $userEvents = $user->eventsAsParticipant->toArray();
 
             foreach($userEvents as $userEvent){
@@ -108,7 +108,7 @@ class EventController extends Controller
 
         $eventsAsParticipant = $user->eventsAsParticipant;
 
-        return view('events.dashboard', 
+        return view('events.dashboard',
                ['events' => $events, 'eventAsParticipant' => $eventsAsParticipant]);
 
     }
