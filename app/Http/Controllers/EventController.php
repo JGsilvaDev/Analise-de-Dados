@@ -29,10 +29,14 @@ class EventController extends Controller
 
     public function dados(){
 
-        $dados = fopen("\Users\João Gabriel\Downloads\ProjetoPII-main\public\json", "r");
+        $dado = file_get_contents("\Users\João Gabriel\Desktop\Trabalho João\LARAVEL\ARQUIVOS\hdcevents\public\json\dados.json");
 
-        var_dump(json_decode($dados));
-        
+        $dadosDecodificados = json_decode($dado);
+
+        foreach($dadosDecodificados->dado as $dados){
+            echo $dados->field13.' - '.$dados->field2;
+            echo '<br/>';
+        }
 
     }
 
