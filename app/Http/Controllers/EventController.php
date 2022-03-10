@@ -29,9 +29,20 @@ class EventController extends Controller
 
     public function dados(){
 
-        $dados = fopen("GitHub/public/json/dado.php", "r");
 
-        var_dump(json_decode($dados));
+        $dado = file_get_contents("GitHub/public/json/dado.php", "r");
+
+
+
+
+        //$dado = file_get_contents("\Users\João Gabriel\Desktop\Trabalho João\LARAVEL\ARQUIVOS\hdcevents\public\json\dados.json");
+
+        $dadosDecodificados = json_decode($dado);
+
+        foreach($dadosDecodificados->dado as $dados){
+            echo $dados->field13.' - '.$dados->field2;
+            echo '<br/>';
+        }
 
 
     }
