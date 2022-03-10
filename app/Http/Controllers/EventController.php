@@ -30,13 +30,15 @@ class EventController extends Controller
     public function dados(){
 
 
-        $dado = file_get_contents("GitHub/public/json/dado.php", "r");
+        $dado = file_get_contents("C:\Users\home\ProjetoPI\GitHub\public\json\dados.json", "r");
 
 
 
-
-        //$dado = file_get_contents("\Users\João Gabriel\Desktop\Trabalho João\LARAVEL\ARQUIVOS\hdcevents\public\json\dados.json");
-
+/*
+PC do João
+        $dado = file_get_contents("\Users\João Gabriel\Desktop
+        \Trabalho João\LARAVEL\ARQUIVOS\hdcevents\public\json\dados.json");
+*/
         $dadosDecodificados = json_decode($dado);
 
         foreach($dadosDecodificados->dado as $dados){
