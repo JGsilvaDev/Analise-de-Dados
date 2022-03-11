@@ -37,10 +37,10 @@ class EventController extends Controller
 
         //print_r($dadosDecodificados);
 
-        foreach($dadosDecodificados->dado as $dados){
+        /*foreach($dadosDecodificados->dado as $dados){
             echo $dados->field13.' - '.$dados->field2;
             echo '<br/>';
-        }
+        }*/
 
 
     public function store(Request $request){
