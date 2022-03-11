@@ -21,11 +21,20 @@ class EventController extends Controller
             return view('welcome',['search'=> $search]);
         }
 
+
     }
 
     public function dados(){
 
-        $dado = file_get_contents("\Users\João Gabriel\Desktop\Trabalho João\LARAVEL\ARQUIVOS\hdcevents\public\json\dados.json");
+
+        $dado = file_get_contents("C:\Users\home\ProjetoPI\GitHub\public\json\dados.json", "r");
+
+
+
+
+/*PC do João*/
+        $dado = file_get_contents("\Users\João Gabriel\Desktop
+        \Trabalho João\LARAVEL\ARQUIVOS\hdcevents\public\json\dados.json");
 
         $dadosDecodificados = json_decode($dado);
 
@@ -35,10 +44,6 @@ class EventController extends Controller
             echo $dados->field13.' - '.$dados->field2;
             echo '<br/>';
         }
-
-        return view('dados',['dados' => $dado]);
-
-    }
 
 
     public function create(){
@@ -88,7 +93,7 @@ class EventController extends Controller
         $hasUserJoined = false;
 
         if($user){
-            
+
             $userEvents = $user->eventsAsParticipant->toArray();
 
             foreach($userEvents as $userEvent){
@@ -112,7 +117,7 @@ class EventController extends Controller
 
         $eventsAsParticipant = $user->eventsAsParticipant;
 
-        return view('events.dashboard', 
+        return view('events.dashboard',
                ['events' => $events, 'eventAsParticipant' => $eventsAsParticipant]);
 
     }
