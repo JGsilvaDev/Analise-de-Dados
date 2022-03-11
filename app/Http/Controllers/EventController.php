@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Event;
 use App\Models\User;
+use Illuminate\Support\Facades\View;
 
 class EventController extends Controller
 {
@@ -13,17 +14,12 @@ class EventController extends Controller
 
         $search = request('search');
 
-        if($search){
 
-            $events= Event::where([
-                ['title', 'like','%'.$search.'%']
-            ])->get();
-
-        }else{
-            $events = Event::all();
+        if (view()->exists($search)) {
+            return redirect($search);
+        } else {
+            return view('welcome',['search'=> $search]);
         }
-        
-        return view('welcome',[ 'events' => $events, 'search'=> $search]);
 
     }
 
@@ -33,10 +29,14 @@ class EventController extends Controller
 
         $dadosDecodificados = json_decode($dado);
 
+        //print_r($dadosDecodificados);
+
         foreach($dadosDecodificados->dado as $dados){
             echo $dados->field13.' - '.$dados->field2;
             echo '<br/>';
         }
+
+        return view('dados',['dados' => $dado]);
 
     }
 
