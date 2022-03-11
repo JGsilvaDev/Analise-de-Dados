@@ -14,19 +14,15 @@ class EventController extends Controller
 
         $search = request('search');
 
-
         if (view()->exists($search)) {
             return redirect($search);
         } else {
             return view('welcome',['search'=> $search]);
         }
 
-
     }
 
     public function dados(){
-
-
        /* $dado = file_get_contents("C:\Users\home\ProjetoPI\GitHub\public\json\dados.json", "r");*/
 
 /*PC do João*/
@@ -36,10 +32,13 @@ class EventController extends Controller
 
         //print_r($dadosDecodificados);
 
-        foreach($dadosDecodificados->dado as $dados){
+        /*foreach($dadosDecodificados->dado as $dados){
             echo $dados->field13.' - '.$dados->field2;
             echo '<br/>';
-        }
+        }*/
+
+        return view('dados',['dados'=> $dado]);
+
     }
 
     public function store(Request $request){
