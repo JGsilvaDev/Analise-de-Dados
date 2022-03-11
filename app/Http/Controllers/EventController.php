@@ -27,21 +27,20 @@ class EventController extends Controller
     public function dados(){
 
 
-        $dado = file_get_contents("C:\Users\home\ProjetoPI\GitHub\public\json\dados.json", "r");
+       /* $dado = file_get_contents("C:\Users\home\ProjetoPI\GitHub\public\json\dados.json", "r");*/
 
-/*PC do João
-        $dado = file_get_contents("\Users\João Gabriel\Desktop
-        \Trabalho João\LARAVEL\ARQUIVOS\hdcevents\public\json\dados.json");
-*/
+/*PC do João*/
+        $dado = file_get_contents("\Users\João Gabriel\Desktop\Trabalho João\LARAVEL\ARQUIVOS\hdcevents\public\json\dados.json", "r");
+
         $dadosDecodificados = json_decode($dado);
 
         //print_r($dadosDecodificados);
 
-        /*foreach($dadosDecodificados->dado as $dados){
+        foreach($dadosDecodificados->dado as $dados){
             echo $dados->field13.' - '.$dados->field2;
             echo '<br/>';
-        }*/
-
+        }
+    }
 
     public function store(Request $request){
 
@@ -186,6 +185,4 @@ class EventController extends Controller
 
     }
 
-}
-
-
+    }
