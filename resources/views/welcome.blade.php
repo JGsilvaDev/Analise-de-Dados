@@ -22,8 +22,7 @@
 
             @if($search)
         <p>Não foi possivel encontrar nenhum evento com {{ $search }}!</p>
-        <p>        <a button type="button" id="voltar" class="btn btn-dark" a href="/" >Voltar para página inicial</a></p>
-        <p>        <a button type="button" id="voltar" class="btn btn-dark"  a href="/dados">Ir para pagina Dados </a></p>                                                                                             </p>
+        <p>        <a button type="button" id="voltar" class="btn btn-dark" a href="/" >Voltar para página inicial</a></p>                                                                                            </p>
             @endif
         </div>
     </div>

@@ -32,10 +32,10 @@ class EventController extends Controller
 
 
 
-/*PC do João*/
+/*PC do João
         $dado = file_get_contents("\Users\João Gabriel\Desktop
         \Trabalho João\LARAVEL\ARQUIVOS\hdcevents\public\json\dados.json");
-
+*/
         $dadosDecodificados = json_decode($dado);
 
         //print_r($dadosDecodificados);
