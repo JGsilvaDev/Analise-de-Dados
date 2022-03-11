@@ -29,9 +29,6 @@ class EventController extends Controller
 
         $dado = file_get_contents("C:\Users\home\ProjetoPI\GitHub\public\json\dados.json", "r");
 
-
-
-
 /*PC do João
         $dado = file_get_contents("\Users\João Gabriel\Desktop
         \Trabalho João\LARAVEL\ARQUIVOS\hdcevents\public\json\dados.json");
@@ -45,10 +42,6 @@ class EventController extends Controller
             echo '<br/>';
         }
 
-
-    public function create(){
-        return view('events.create');
-    }
 
     public function store(Request $request){
 
