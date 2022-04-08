@@ -43,3 +43,4 @@ Route::delete('/events/leave/{id}', [EventController::class, 'leaveEvent'])->mid
 
 Route::get('/dados', [EventController::class, 'dados']);
 
+
