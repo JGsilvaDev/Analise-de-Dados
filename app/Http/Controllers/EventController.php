@@ -25,23 +25,20 @@ class EventController extends Controller
     }
 
     public function dados(Request $request){
+        
 
-        dd($request->all());
-
-        $row = 1;
-        if (($handle = fopen(storage_path().'/app/public/dados.csv','r')) !== FALSE) {
-            while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-                $num = count($data);
-                echo "<p> $num campos na linha $row: <br /></p>\n";
-                $row++;
-                for ($c=0; $c < $num; $c++) {
-                    echo $data[$c] . "<br />\n";
+            $row = 1;
+            if (($handle = fopen(storage_path().'/app/public/dados.csv','r')) !== FALSE) {
+                while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                    $num = count($data);
+                    echo "<p> $num campos na linha $row: <br /></p>\n";
+                    $row++;
+                    for ($c=0; $c < $num; $c++) {
+                        echo $data[$c] . "<br />\n";
+                    }
                 }
+                fclose($handle);
             }
-            fclose($handle);
-        }
-
-
 
         //return view('dados',['dados'=> $dado]); \Storage::disk('public')->get('dados.csv')
             

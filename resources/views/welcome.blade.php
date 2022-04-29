@@ -54,35 +54,27 @@
         
             botaoAbrirModal.addEventListener('click', e => {   
 
-                if(search1){
-                    $("#modalPesquisar").dialog({
-                        autoOpen: true,
-                        resizable: false,
-                        width: 700,
-                        height: 600,
-                        modal: true,
-                        buttons: {
-                            "Selecionar":function(){
+                $("#modalPesquisar").dialog({
+                    autoOpen: true,
+                    resizable: false,
+                    width: 700,
+                    height: 600,
+                    modal: true,
+                    buttons: {
+                        "Selecionar":function(){
 
-                                var check = $("#formCheckBox").submit();
+                            var check = $("#formCheckBox").submit();
 
-                                window.location.href = `/${search1}?filtro1=`+$check+`&filtro2=ertf`;
+                            window.location.href = `/${search1}?filtro1=`+$check+`&filtro2=ertf`;
 
-                            },
-                            "Voltar":function(){
-                                $(this).dialog("close");
-                                
-                                
-                            }
-                            
+                        },
+                        "Voltar":function(){
+                            $(this).dialog("close");    
                         }
-                    })
-
-                }else{
-                    console.log("NAo funciona");
-                }
-
                         
+                    }
+                    })
+        
                 }) 
               
 
