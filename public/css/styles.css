@@ -16,11 +16,11 @@ body {
     padding-bottom: 100px;
     position: relative;
     background: rgb(63, 94, 251);
-    background: radial-gradient(
+    /*background: radial-gradient(
         circle,
         rgba(63, 94, 251, 1) 0%,
         rgba(252, 70, 107, 1) 100%
-    );
+    );*/
     font-family: "Courier New";
 }
 
@@ -198,12 +198,13 @@ body {
     margin-top: 20px;
 }
 
-/* Footer
+ /* Footer */
+ 
 footer {
     text-align: center;
-    background-color: #353E48;
+    background-color: rgb(30, 45, 122);
     color: #fff;
-    padding: 30px;
+    padding: 20px;
     position: absolute;
     bottom:0;
     width: 100%;
@@ -212,9 +213,15 @@ footer {
 footer p {
     margin-bottom: 0;
 }
-*/
 
-/* Modal */
-#modalPesquisar{
-    
+header{
+    text-align: center;
+    color: #fff;
+    padding: 8px;
+    background-color: rgb(30, 45, 122);
 }
+
+label{
+    display: block;
+}
+

@@ -20,26 +20,32 @@ class EventController extends Controller
             return view('welcome',['search'=> $search]);
         }
 
+        return view('welcome');
+
     }
 
     public function dados(Request $request){
-       /* $dado = file_get_contents("C:\Users\home\ProjetoPI\GitHub\public\json\dados.json", "r");*/
 
-    /*PC do João*/
-            //$dado = file_get_contents("\Users\João Gabriel\Desktop\Trabalho João\LARAVEL\ARQUIVOS\hdcevents\public\json\dados.json", "r");
+        dd($request->all());
 
-            //$dadosDecodificados = json_decode($dado);
-
-            //print_r($dadosDecodificados);
-
-            /*foreach($dadosDecodificados->dado as $dados){
-                echo $dados->field13.' - '.$dados->field2;
-                echo '<br/>';
+        $row = 1;
+        if (($handle = fopen(storage_path().'/app/public/dados.csv','r')) !== FALSE) {
+            while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                $num = count($data);
+                echo "<p> $num campos na linha $row: <br /></p>\n";
+                $row++;
+                for ($c=0; $c < $num; $c++) {
+                    echo $data[$c] . "<br />\n";
+                }
             }
+            fclose($handle);
+        }
 
-            return view('dados',['dados'=> $dado]);*/
 
-        
+
+        //return view('dados',['dados'=> $dado]); \Storage::disk('public')->get('dados.csv')
+            
+        return view('dados');
 
     }
 

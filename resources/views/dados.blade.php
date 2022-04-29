@@ -3,8 +3,6 @@
 @section('title','HDC Events')
 
 @section('content')
-
-    {{-- {{$dados}} --}}
     
     <div id="events-container" class="col-md-12">
         <div id="cards-container" class="row">
