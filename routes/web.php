@@ -21,4 +21,3 @@ Route::get('/', [EventController::class, 'index']);
 
 Route::get('/dados', [EventController::class, 'dados']);
 
-
