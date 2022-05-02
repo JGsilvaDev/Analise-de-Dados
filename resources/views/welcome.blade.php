@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title','HDC Events')
+@section('title','Health Info')
 
 @section('content')
 
@@ -10,19 +10,24 @@
 <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
     <header>
-        <p></p>
+        <p></p>        
     </header>
 
+    <div id="imageLogo">
+    <img src="img/events/logo3.png" alt="Logo do site, Health Info." height="250"  >  
+    </div>
+    
     <div id="search-container" class="col-md-12">
-        <h1>Nome do produto</h1>
+  
+        
         <form action="/" method="GET">
-
+        
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"><i class="bx bx-search"></i></span>
                 <input type="text" id="search" name="search" class="form-control"  placeholder="Tem alguma pergunta? Pergunte agora">
               </div>
 
-            <p><a button type="button" id="pesquisar" class="btn btn-dark">Procurar</a></p>
+            <p><a button type="button" id="pesquisar" class="btn btn-dark">Filtrar</a></p>
         </form>
         <p></p>
 
@@ -30,20 +35,27 @@
     <div id="events-container" class="col-md-12">
 
        @if($search)
-        <h2>Buscando por: {{ $search }} </h2>
+       <p><h2>Buscando por: {{ $search }} </h2></p>
+        
        @endif
         <div id="cards-container" class="row">
 
             @if($search)
-                <p>Não foi possivel essa pesquisa com {{ $search }}!</p>
-                <p><a button type="button" id="voltar" class="btn btn-dark" a href="/" >Voltar para página inicial</a></p>                                                                                            </p>
+                <p>Não foi possivel fazer a pesquisa: {{ $search }}!</p>
+                <p><a button type="button" id="voltar" class="btn btn-dark" a href="/" >Voltar para página inicial</a></p>
             @endif
 
         </div>
     </div>
 
     <footer>
-         <p>Para mais informações entre em contato com noiz</p>  
+        <div id="footerImagens">
+         <p>Para mais informações entre em contato com os desenvolvedores 
+             <a href="https://linkr.bio/HealthInfo" target="_blank"><img src="img\events\icon-flickr.png" height="25" alt="Icone para contato"></a> 
+            </p>
+         
+         
+         </div>
     </footer>
 
     <script>
@@ -106,7 +118,7 @@
             </form>
 
             <div class="mt-3" id="divPais">
-                <label>Infome qual pais irá selecionar: </label>
+                <label>Informe qual pais irá selecionar: </label>
                 <select name="Paises">
                     <option value="-1" selected>Selecione um Pais</option>
                     <option value="1">Brasil</option>
