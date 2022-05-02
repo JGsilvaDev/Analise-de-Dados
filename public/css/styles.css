@@ -1,21 +1,48 @@
 /* General */
 
-/*
+
 * {
-    font-family: "Roboto";
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
-*/
+
+
+.btn-dark{
+    border-color: #28a745;
+    /*
+    peguei na net
+    */
+    border-radius: 20px;
+    box-shadow: 0px 1px 2px 0 rgb(11 28 19 / 5%), 0px 3px 8px 0 rgb(11 28 19 / 5%);
+    background-color: #28a745;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: -0.16px;
+    text-align: center;
+  
+}
 
 #search-container h1 {
     font-size: 60px;   
-    font-family: "Courier New";
 }
+
+#imageLogo{
+text-align: center;
+padding-top: 1x;
+padding-bottom: 1px;
+position: static;
+padding-top: 50px;
+padding-bottom: 50px;
+
+}
+
+
 
 body {
     min-height: 100vh;
     padding-bottom: 100px;
     position: relative;
-    background: rgb(63, 94, 251);
+    background: #dfd8d8;
     /*background: radial-gradient(
         circle,
         rgba(63, 94, 251, 1) 0%,
@@ -26,13 +53,15 @@ body {
 
 #cards-container #voltar {
     color: rgb(255, 255, 255);
-    background-color: rgba(252, 70, 107, 1);
+    background-color: #28a745;
     border-radius: 100px;
-    font-family: "Didot";
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    
 }
 
+
 #cards-container {
-    color: #ffffff;
+    color: #212121;
     text-align: center;
 }
 
@@ -48,33 +77,37 @@ body {
 #search-container {
     background-size: cover;
     background-position: center;
-    height: 300px;
-    padding: 140px;
+    height: 1px;
+    padding-bottom: 1px;
     text-align: center;
     margin-bottom: 0px;
     font-family: "Didot";
 }
 
 #search-container h1 {
-    color: #ffffff;
+    color: #212121;
     margin-bottom: 50px;
     font-weight: 900;
+    
 }
 
 #search-container form {
     width: 65%;
     margin: 0 auto;
+    
+    
 }
 
 /* Event List */
 #events-container {
-    padding: 50px;
+    padding: 20px;
     text-align: center;
 }
 
 #events-container h2 {
-    margin-bottom: 10px;
-    color: #ffffff;
+    color: #212121;
+    padding-top: 60px ;
+    
 }
 
 #events-container .subtitle {
@@ -190,6 +223,7 @@ body {
 
 .dashboard-events-container form {
     display: inline-block;
+  
 }
 
 /* Edit Page*/
@@ -202,7 +236,7 @@ body {
  
 footer {
     text-align: center;
-    background-color: rgb(30, 45, 122);
+    background-color: #28a745;;
     color: #fff;
     padding: 20px;
     position: absolute;
@@ -210,18 +244,25 @@ footer {
     width: 100%;
 }
 
-footer p {
-    margin-bottom: 0;
+#footerImagens img{
+    padding-left: 100px;
+    
 }
 
+footer p {
+    margin-bottom: 0;
+    text-align: center;
+    padding-left: 100x;
+}
+
+/* Header*/
 header{
     text-align: center;
     color: #fff;
     padding: 8px;
-    background-color: rgb(30, 45, 122);
+    background-color: #28a745;
 }
 
 label{
     display: block;
 }
-
