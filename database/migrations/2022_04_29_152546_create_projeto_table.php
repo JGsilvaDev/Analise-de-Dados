@@ -14,8 +14,16 @@ class CreateProjetoTable extends Migration
     public function up()
     {
         Schema::create('projeto', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->string('nome_tabela');
+            $table->string('titulo_dados');
+            $table->string('regiao');
+            $table->string('estado');
+            $table->string('cidade');
+            $table->integer('total');
+            $table->integer('urbana');
+            $table->integer('rural');
+            //$table->id();
+            //$table->timestamps();
         });
     }
 
