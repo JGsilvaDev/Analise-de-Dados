@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Event;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
 
 class EventController extends Controller
@@ -40,9 +41,29 @@ class EventController extends Controller
         //     fclose($handle);
         //}
 
-        
+        // select Nome_Capitais   
+        // from tabela1__capitais
+        // order by Nome_Capitais 
 
-        return view('dados');
+        $capitais = DB::table("tabela1__capitais")
+                  ->select('Nome_Capitais','id')
+                  ->orderBy('Nome_Capitais', 'asc')
+                  ->get();
+
+                  //dd($capitais);
+
+        $regiao = DB::table("tabela1__regiao_estado")
+                ->select('Nome','id')
+                ->where('Nome','!=','Brasil')
+                ->where('id','<=','6')
+                ->orderBy('Nome', 'asc')
+                ->get();
+                  
+
+        return view('dados',[
+            'capitais'=>$capitais,
+            'regiao' => $regiao,
+        ]);
     }  
 
     public function dadosTeste(){

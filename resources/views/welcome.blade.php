@@ -201,9 +201,6 @@
 
         console.log(search);
 
-
-
-
     </script>    
 @endsection
 

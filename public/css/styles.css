@@ -42,8 +42,10 @@ body {
     min-height: 100vh;
     padding-bottom: 100px;
     position: relative;
-    background: #dfd8d8;
-    /*background: radial-gradient(
+    background: #ffffff;
+    /*
+        #dfd8d8;
+        background: radial-gradient(
         circle,
         rgba(63, 94, 251, 1) 0%,
         rgba(252, 70, 107, 1) 100%
@@ -267,4 +269,12 @@ label{
     display: block;
 }
 
-
+#chart_div{
+   
+    margin-left:35% ;
+   
+}
+#vis_div{
+    
+    margin-left:22% ;
+}
