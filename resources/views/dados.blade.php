@@ -29,7 +29,7 @@
                 <select name="Capitais" >
                     <option value="-1" selected>Selecione uma Capital</option>
                     @foreach ($capitais as $cap )
-                        <option value="{{ $cap->id }}">{{ $cap->Nome_Capitais }}</option>
+                        <option data-Regioes="{{ $cap->Estado }}" value="{{ $cap->id }}">{{ $cap->Nome_Capitais }}</option>
                     @endforeach
                 </select>
 

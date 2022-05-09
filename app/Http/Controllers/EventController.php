@@ -46,7 +46,7 @@ class EventController extends Controller
         // order by Nome_Capitais 
 
         $capitais = DB::table("tabela1__capitais")
-                  ->select('Nome_Capitais','id')
+                  ->select('Nome_Capitais','id','Estado')
                   ->orderBy('Nome_Capitais', 'asc')
                   ->get();
 
