@@ -28,6 +28,7 @@
 
     </head>
     <body>
+        <section id ="main">
         {{-- <header>
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="collapse navbar-collapse" id="navbar">
@@ -82,7 +83,9 @@
         {{-- <footer>
             <p>HDC Events &copy; 2020</p>
         </footer>   --}}
+    </section> 
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> 
-        @include('sweetalert::alert') 
+        @include('sweetalert::alert')
+    
     </body>
 </html>

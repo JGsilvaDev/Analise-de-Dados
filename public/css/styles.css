@@ -38,11 +38,11 @@ padding-bottom: 50px;
 
 
 
-body {
+section#welcome{
     min-height: 100vh;
     padding-bottom: 100px;
     position: relative;
-    background: #ffffff;
+    background-color: rgba(223,216,216,1)!important;
     /*
         #dfd8d8;
         background: radial-gradient(

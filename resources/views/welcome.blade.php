@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
+<section id="welcome">
     <header>
         <p></p>        
     </header>
@@ -57,137 +58,7 @@
             </p>
         </div>
     </footer>
-
-    {{-- <script>
-
-        let botaoAbrirModal = document.getElementById('pesquisar');
-
-        let search1 =  $('#search').val();
-        
-            botaoAbrirModal.addEventListener('click', e => {   
-
-                $("#modalPesquisar").dialog({
-                    autoOpen: true,
-                    resizable: false,
-                    width: 700,
-                    height: 600,
-                    modal: true,
-                    buttons: {
-                        "Selecionar":function(){
-
-                            var check = $("#formCheckBox").submit();
-
-                            window.location.href = `/${search1}?filtro1=`+$check+`&filtro2=ertf`;
-
-                        },
-                        "Voltar":function(){
-                            $(this).dialog("close");    
-                        }
-                        
-                    }
-                    })
-        
-                }) 
-              
-
-    </script>
-
-    
-       
-        <div id="modalPesquisar" title="Filtros" style="display:none">
-            <form action="/dados" method="get" id="formCheckBox">
-            @csrf
-                <label>Informe como quer filtrar os dados: </label>
-                    <label>
-                        <div class="form-row">
-                            <input type="checkbox" name="filtro[]" id="pais" value="Pais"> País 
-                        </div>
-                    </label>
-
-                    <label>
-                        <div class="form-row">
-                            <input type="checkbox" name="filtro[]" id="estado" value="Estado"> Estado 
-                        </div>
-                    </label>
-
-                    <label>
-                        <div class="form-row">
-                            <input type="checkbox" name="filtro[]" id="cidade" value="Cidade"> Cidade 
-                        </div>
-                    </label> 
-            </form>
-
-            <div class="mt-3" id="divPais">
-                <label>Informe qual pais irá selecionar: </label>
-                <select name="Paises">
-                    <option value="-1" selected>Selecione um Pais</option>
-                    <option value="1">Brasil</option>
-                  </select>
-            </div>
-
-            <div class="mt-3" id="divEstado">
-                <label>Infome qual estado irá selecionar: </label>
-                <select name="Paises">
-                    <option value="-1" selected>Selecione um Estado</option>
-                    <option value="1">SP</option>
-                  </select>
-            </div>
-
-            <div class="mt-3" id="divCidade">
-                <label>Infome qual cidade irá selecionar: </label>
-                <select name="Paises">
-                    <option value="-1" selected>Selecione uma cidade</option>
-                    <option value="1">Pinda</option>
-                  </select>
-            </div>
-
-
-        </div>
-    
-
-    <script>
-        $("#divPais").hide();
-        $("#divEstado").hide();
-        $("#divCidade").hide();
-
-        $('#pais').change(function() {
-            if ($("#pais").is(':checked')) {
-                $('#estado').attr('disabled', true)
-                $('#cidade').attr('disabled', true)
-                $("#divPais").show();
-            } else {
-                $('#estado').removeAttr('disabled')
-                $('#cidade').removeAttr('disabled')
-                $("#divPais").hide();
-            }
-            
-        });
-
-        $('#estado').change(function() {
-            if ($("#estado").is(':checked')) {
-                $('#pais').attr('disabled', true)
-                $('#cidade').attr('disabled', true)
-                $("#divEstado").show();
-            } else {
-                $('#pais').removeAttr('disabled')
-                $('#cidade').removeAttr('disabled')
-                $("#divEstado").hide();
-            }
-        });
-
-        $('#cidade').change(function() {
-            if ($("#cidade").is(':checked')) {
-                $('#pais').attr('disabled', true)
-                $('#estado').attr('disabled', true)
-                $("#divCidade").show();
-            } else {
-                $('#pais').removeAttr('disabled')
-                $('#estado').removeAttr('disabled')
-                $("#divCidade").hide();
-            }
-        });
-    </script> --}}
-
+</section>
 
     <script>
         var search = "{{ $search }}";
