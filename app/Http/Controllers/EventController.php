@@ -53,16 +53,21 @@ class EventController extends Controller
                   //dd($capitais);
 
         $regiao = DB::table("tabela1__regiao_estado")
-                ->select('Nome','id')
+                ->select('Nome','id','Regiao')
                 ->where('Nome','!=','Brasil')
                 ->where('id','<=','6')
                 ->orderBy('Nome', 'asc')
                 ->get();
-                  
+           
+        $dados = DB::table("nome_tabelas")  
+                ->select('id','nome_tabelas')
+                ->orderBy('id','asc')
+                ->get();      
 
         return view('dados',[
-            'capitais'=>$capitais,
+            'capitais'=> $capitais,
             'regiao' => $regiao,
+            'dados' => $dados
         ]);
     }  
 
