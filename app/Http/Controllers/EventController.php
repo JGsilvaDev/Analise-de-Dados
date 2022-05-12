@@ -13,38 +13,47 @@ class EventController extends Controller
 {
     public function index(){
 
+        $tabela1 = DB::table('nome_tabelas')
+        ->select('tabela1__regiao_estado.Nome','tabela1__regiao_estado.Total','nome_tabelas.nome_tabelas as Tabela','tabela1__regiao_estado.Regiao')
+        ->join('tabela1__total_capitais','tabela1__total_capitais.Nome_Tabela','like','nome_tabelas.nome_tabelas')
+        ->join('tabela1__regiao_estado','tabela1__regiao_estado.Nome_tabela','=','nome_tabelas.nome_tabelas')
+        ->join('tabela1__capitais','tabela1__capitais.Estado','=','tabela1__regiao_estado.Regiao')
+        ->where([['tabela1__regiao_estado.Nome','!=','Brasil'],['tabela1__regiao_estado.id','>',5]])
+        ->where('tabela1__regiao_estado.Regiao','=', 'Sudeste')
+        ->where('tabela1__regiao_estado.Nome','=', 'Sao Paulo')
+        ->groupByRaw('1, 3, 4, 2')
+        ->orderBy('tabela1__regiao_estado.Total','ASC')
+        //->limit(3)
+        ->first();
+
+        $top3Tabela1 = DB::table('nome_tabelas')
+        ->select('tabela1__regiao_estado.Nome','tabela1__regiao_estado.Total','nome_tabelas.nome_tabelas as Tabela','tabela1__regiao_estado.Regiao')
+        ->join('tabela1__total_capitais','tabela1__total_capitais.Nome_Tabela','like','nome_tabelas.nome_tabelas')
+        ->join('tabela1__regiao_estado','tabela1__regiao_estado.Nome_tabela','=','nome_tabelas.nome_tabelas')
+        ->join('tabela1__capitais','tabela1__capitais.Estado','=','tabela1__regiao_estado.Regiao')
+        ->where([['tabela1__regiao_estado.Nome','!=','Brasil'],['tabela1__regiao_estado.id','>',5]])
+        ->groupByRaw('1, 3, 4, 2')
+        ->orderBy('tabela1__regiao_estado.Total','DESC')
+        ->limit(3)
+        ->get();
+
+        //dd($tabela1,$top3Tabela1->toArray(),$top3Tabela1[0]->Total);
+
+
         $search = request('search');
 
         if (view()->exists($search)) {
             return redirect($search);
         } else {
             return view('welcome',['search'=> $search]);
-        }
+        }    
 
         return view('welcome');
 
     }
 
-    public function dados(Request $request){
+    public function lixo(Request $request){
       
-        // $row = 1;
-        // if (($handle = fopen(storage_path().'/app/public/dados.csv','r')) !== FALSE) {
-        //     while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-        //         $num = count($data);
-        //         echo "<p> $num campos na linha $row: <br /></p>\n";
-        //         $row++;
-        //         for ($c=0; $c < $num; $c++) {                
-        //             echo $data[$c] . "<br />\n";
-        //         }
-                
-        //     }
-        //     fclose($handle);
-        //}
-
-        // select Nome_Capitais   
-        // from tabela1__capitais
-        // order by Nome_Capitais 
-
         $capitais = DB::table("tabela1__capitais")
                   ->select('Nome_Capitais','id','Estado')
                   ->orderBy('Nome_Capitais', 'asc')
@@ -64,19 +73,11 @@ class EventController extends Controller
                 ->orderBy('id','asc')
                 ->get();      
 
-        return view('dados',[
+        return view('lixo',[
             'capitais'=> $capitais,
             'regiao' => $regiao,
             'dados' => $dados
         ]);
     }  
-
-    public function dadosTeste(){
-       
-          
-         
-    }
-
-
 
 }//fim do class event controler

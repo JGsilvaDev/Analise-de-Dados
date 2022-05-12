@@ -25,7 +25,7 @@
                 </a>
             </label>
             <label>
-                <select name="Regioes" size="1" width="180" tabindex="1">
+                <select name="Regioes" id = "Regioes" size="1" width="180" tabindex="1">
                     <option value="-1" selected>Selecione uma Região</option>
                     @foreach ($regiao as $reg)
                         <option value="{{ $reg->Regiao }}">{{ $reg->Nome }}</option>
@@ -33,7 +33,7 @@
                     <option value="Distrito Federal">Distrito Federal</option>
                 </select>
 
-                <select name="Capitais" size="1" width="195" tabindex="1">
+                <select name="Capitais" id = "Capitais" size="1" width="195" tabindex="1">
                     <option value="-1" selected>Selecione uma Capital</option>
                     @foreach ($capitais as $cap)
                         <option data-Regioes="{{ $cap->Estado }}" value="{{ $cap->Nome_Capitais }}">
@@ -41,7 +41,7 @@
                     @endforeach
                 </select>
 
-                <select name="TipoTabela">
+                <select name="TipoTabela" id = "TipoTabela">
                     <option value="-1" selected>Selecione um tipo de dado a ser filtrado</option>
                     @foreach ($dados as $dado)
                         <option value="{{ $dado->id }}">{{ $dado->nome_tabelas }}</option>
@@ -53,15 +53,13 @@
             </label>
         </div>
     </header>
-
-
-
-
-    
-    <head>
     
     <!-- Chart's container -->
     <div id="chart" style="height: 300px;"></div>
+    <!-- Charting library -->
+
+    <!-- Chart's container -->
+    <div id="chart1" style="height: 300px;"></div>
     <!-- Charting library -->
     
                
@@ -78,11 +76,45 @@
 
 
         <script type="text/javascript">
+
+            $("#chart").hide();
             
             $("#botaoPesquisar").on('click', function() {
-                $("#chart").hide();
-                //alert("Funcionou");
+                $("#chart").show();
+                $("#chart1").hide();
+                // var nomeRegiao = $("#Regioes").val();
+                // var nomeCapitais = $("#Capitais").val();
+                // var filtro = $("#TipoTabela").val();
+
+                
             });
+
+            function enviarDados(){
+
+                indicForm = new FormData();
+
+                indicForm.append('Nome', document.getElementById('Regioes').value);
+                indicForm.append('Nome_Capitais', document.getElementById('Capitais').value);
+                indicForm.append('nome_tabelas', document.getElementById('TipoTabela').value);
+
+                $.ajax({
+                    type:'POST',
+                    url: 'app\Charts\SampleChart.php',
+                    data: indicForm,
+                    processData: false,
+                    contentType: false,
+                    success: function(data){
+                        const json = JSON.parse(data)
+
+                        console.log(json);
+                        console.log(JSON.parse(data))
+                    },
+                    error:function(err){
+                        console.error('erro ->',err)
+                    }
+                });
+
+            }
 
             var capitais = $('select[name="Capitais"] option');
             $('select[name="Regioes"]').on('change', function() {
@@ -99,11 +131,17 @@
         <!-- Chartisan -->
         <script src="https://unpkg.com/@chartisan/echarts/dist/chartisan_echarts.js"></script>
         <!-- Your application script -->
+
         <script>
-        const chart = new Chartisan({
-            el: '#chart',
-            url: "@chart('sample_chart')",
-        });
+            const chart = new Chartisan({
+                el: '#chart',
+                url: "@chart('sample_chart')",
+            });
+
+            const chart1 = new Chartisan({
+                el: '#chart1',
+                url: "@chart('sample_chart1')",
+            });
         </script>
 
 

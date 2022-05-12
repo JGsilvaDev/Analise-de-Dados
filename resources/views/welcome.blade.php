@@ -28,27 +28,9 @@
                 <span class="input-group-text" id="basic-addon1"><i class="bx bx-search"></i></span>
                 <input type="text" id="search" name="search" class="form-control"  placeholder="Tem alguma pergunta? Pergunte agora">
               </div>
-
-            {{-- <p><a button type="button" id="pesquisar" class="btn btn-dark">Filtrar</a></p> --}}
         </form>
         <p></p>
 
-    </div>
-
-    <div id="events-container" class="col-md-12">
-
-       {{-- @if($search)
-       <p><h2>Buscando por: {{ $search }} </h2></p>
-        
-       @endif
-        <div id="cards-container" class="row">
-
-            @if($search)
-                <p>Não foi possivel fazer a pesquisa: {{ $search }}!</p>
-                <p><a button type="button" id="voltar" class="btn btn-dark" a href="/" >Voltar para página inicial</a></p>
-            @endif --}}
-
-        </div>
     </div>
 
     <footer>
@@ -74,5 +56,3 @@
 
     </script>    
 @endsection
-
-    

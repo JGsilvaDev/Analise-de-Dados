@@ -19,5 +19,5 @@ use App\Http\Controllers\EventController;
 
 Route::get('/', [EventController::class, 'index']); 
 
-Route::get('/dados', [EventController::class, 'dados']);
+Route::get('/lixo', [EventController::class, 'lixo']);
 
