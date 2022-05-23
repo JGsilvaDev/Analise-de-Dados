@@ -50,6 +50,7 @@
                 icon:'warning',
                 title:'Não foi possivel encontar essa pesquisa: {{ $search }}!'
             }).then(function(e) {window.location='/'});
+
         }
 
         console.log(search);

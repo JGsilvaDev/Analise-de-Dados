@@ -16,8 +16,10 @@ use Illuminate\Support\Facades\Route;
 /*oioi*/
 
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\Http\Controllers;
 
 Route::get('/', [EventController::class, 'index']); 
 
 Route::get('/lixo', [EventController::class, 'lixo']);
 
+Route::post('/lixo', [EventController::class, 'lixoteste']);

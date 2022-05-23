@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Event;
+use App\Models\informacoes_post;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
@@ -12,34 +13,6 @@ use Illuminate\Support\Facades\View;
 class EventController extends Controller
 {
     public function index(){
-
-        $tabela1 = DB::table('nome_tabelas')
-        ->select('tabela1__regiao_estado.Nome','tabela1__regiao_estado.Total','nome_tabelas.nome_tabelas as Tabela','tabela1__regiao_estado.Regiao')
-        ->join('tabela1__total_capitais','tabela1__total_capitais.Nome_Tabela','like','nome_tabelas.nome_tabelas')
-        ->join('tabela1__regiao_estado','tabela1__regiao_estado.Nome_tabela','=','nome_tabelas.nome_tabelas')
-        ->join('tabela1__capitais','tabela1__capitais.Estado','=','tabela1__regiao_estado.Regiao')
-        ->where([['tabela1__regiao_estado.Nome','!=','Brasil'],['tabela1__regiao_estado.id','>',5]])
-        ->where('tabela1__regiao_estado.Regiao','=', 'Sudeste')
-        ->where('tabela1__regiao_estado.Nome','=', 'Sao Paulo')
-        ->groupByRaw('1, 3, 4, 2')
-        ->orderBy('tabela1__regiao_estado.Total','ASC')
-        //->limit(3)
-        ->first();
-
-        $top3Tabela1 = DB::table('nome_tabelas')
-        ->select('tabela1__regiao_estado.Nome','tabela1__regiao_estado.Total','nome_tabelas.nome_tabelas as Tabela','tabela1__regiao_estado.Regiao')
-        ->join('tabela1__total_capitais','tabela1__total_capitais.Nome_Tabela','like','nome_tabelas.nome_tabelas')
-        ->join('tabela1__regiao_estado','tabela1__regiao_estado.Nome_tabela','=','nome_tabelas.nome_tabelas')
-        ->join('tabela1__capitais','tabela1__capitais.Estado','=','tabela1__regiao_estado.Regiao')
-        ->where([['tabela1__regiao_estado.Nome','!=','Brasil'],['tabela1__regiao_estado.id','>',5]])
-        ->groupByRaw('1, 3, 4, 2')
-        ->orderBy('tabela1__regiao_estado.Total','DESC')
-        ->limit(3)
-        ->get();
-
-        //dd($tabela1,$top3Tabela1->toArray(),$top3Tabela1[0]->Total);
-
-
         $search = request('search');
 
         if (view()->exists($search)) {
@@ -53,13 +26,89 @@ class EventController extends Controller
     }
 
     public function lixo(Request $request){
-      
-        $capitais = DB::table("tabela1__capitais")
-                  ->select('Nome_Capitais','id','Estado')
-                  ->orderBy('Nome_Capitais', 'asc')
-                  ->get();
 
-                  //dd($capitais);
+         $iteration = "";
+         $total =0;
+
+        $capitaisName = DB::table("tabela1__capitais")
+                ->select('Nome_Capitais','id','Estado')
+                ->orderBy('Nome_Capitais', 'asc')
+                ->get();
+     
+        if($request->dataString == "Coeficiente de variacao - Domicilios com lixo coletado por servico de limpeza (%)"){
+            $iteration='1';
+            $capitais = DB::table("tabela1__capitais")
+                ->select('Nome_Capitais','id','Estado','Total')
+                ->where('Nome_Capitais','=',$request->capitais)
+                ->orderBy('Nome_Capitais', 'asc')
+                ->first();
+
+           $total = $capitais->Total;
+                
+        }elseif($request->dataString == "Coeficiente de variacao - Percentual de domicilios com lixo coletado por servico de limpeza (%)"){
+            $iteration='2';
+            $capitais = DB::table("tabela2__capitais")
+                ->select('Nome_Capitais','id','Estado','Total')
+                ->where('Nome_Capitais','=',$request->capitais)
+                ->orderBy('Nome_Capitais', 'asc')
+                ->first();
+
+                $total = $capitais->Total;
+
+        }elseif($request->dataString == 'Domicilios com lixo coletado por serviio de limpeza (Mil domicilios)'){
+            $iteration='3';
+            $capitais = DB::table("tabela3_capitais")
+                ->select('Nome_Capitais','id','Estado','Total')
+                ->where('Nome_Capitais','=',$request->capitais)
+                ->orderBy('Nome_Capitais', 'asc')
+                ->first();
+
+                $total = $capitais->Total;
+
+        }elseif($request->dataString == 'Domicilios com lixo coletado por servico de limpeza, considerando um intervalo de confianca de 95% - limite inferior (Mil domicilios)'){
+            $iteration='4';
+            $capitais = DB::table("tabela4_capitais")
+                ->select('Nome_Capitais','id','Estado','Total')
+                ->where('Nome_Capitais','=',$request->capitais)
+                ->orderBy('Nome_Capitais', 'asc')
+                ->first();
+
+                $total = $capitais->Total;
+
+        }elseif($request->dataString == 'Percentual de domicilios com lixo coletado por servico de limpeza (%)'){
+            $iteration='5';
+            $capitais = DB::table("tabela5_capitais")
+                ->select('Nome_Capitais','id','Estado','Total')
+                ->where('Nome_Capitais','=',$request->capitais)
+                ->orderBy('Nome_Capitais', 'asc')
+                ->first();
+
+                $total = $capitais->Total;
+
+        }elseif($request->dataString == 'Percentual de domicilios com lixo coletado por servico de limpeza, considerando um intervalo de confianca de 95% - limite inferior (%)'){
+            $iteration='6';
+            $capitais = DB::table("tabela6_capitais")
+                ->select('Nome_Capitais','id','Estado','Total')
+                ->where('Nome_Capitais','=',$request->capitais)
+                ->orderBy('Nome_Capitais', 'asc')
+                ->first();
+
+                $total = $capitais->Total;
+
+        }elseif($request->dataString == 'Percentual de domicilios com lixo coletado por servico de limpeza, considerando um intervalo de confianca de 95% - limite superior (%)'){
+            $iteration='7';
+            $capitais = DB::table("tabela7_capitais")
+                ->select('Nome_Capitais','id','Estado','Total')
+                ->where('Nome_Capitais','=',$request->capitais)
+                ->orderBy('Nome_Capitais', 'asc')
+                ->first();
+
+                $total = $capitais->Total;
+
+        }   
+
+        //dd($capitais);
+        // dd($request->all(),$request->dataString,$capitais,$iteration,$request->capitais,$total);
 
         $regiao = DB::table("tabela1__regiao_estado")
                 ->select('Nome','id','Regiao')
@@ -73,11 +122,29 @@ class EventController extends Controller
                 ->orderBy('id','asc')
                 ->get();      
 
-        return view('lixo',[
+        $capitais = "";
+
+
+                // if ($capitais) {
+                //     $success = true;
+                //     $message = "User deleted successfully";
+                // } else {
+                //     $success = false;
+                //     $message = "User not found";
+                // }
+
+       return view('lixo',[
+            'capitaisName'=> $capitaisName,
             'capitais'=> $capitais,
             'regiao' => $regiao,
-            'dados' => $dados
+            'dados' => $dados,
+            'total' => $total,
         ]);
-    }  
+
+        // return response()->json([
+        //     'success' => $success,
+        //     'message' => $message,
+        // ]);
+    }
 
 }//fim do class event controler
