@@ -7,13 +7,13 @@
 
 
 .btn-dark{
-    border-color: #28a745;
+    border-color: #8B0000;
     /*
     peguei na net
     */
     border-radius: 20px;
     box-shadow: 0px 1px 2px 0 rgb(11 28 19 / 5%), 0px 3px 8px 0 rgb(11 28 19 / 5%);
-    background-color: #28a745;
+    background-color: #8B0000;
     border: none;
     color: #fff;
     font-size: 16px;
@@ -237,7 +237,7 @@ section#welcome{
 
 footer {
     text-align: center;
-    background-color: #28a745;;
+    background-color: #8B0000 ;
     color: #fff;
     padding: 20px;
     position: absolute;
@@ -259,9 +259,9 @@ footer p {
 /* Header*/
 header{
     text-align: center;
-    color: #fff;
-    padding: 8px;
-    background-color: #28a745;
+    color: #8B0000 ;
+    /* padding: 8px; */
+    background-color: #8B0000 ;
 }
 
 label{
@@ -285,3 +285,39 @@ label{
     justify-content: space-between;
     align-items: center;
 }*/
+
+div#containerCards{
+    margin-top: 20px;
+    margin-left: 120px;
+}
+
+div#containerCards1{
+    margin-top: 35px;
+    margin-left: 120px;
+}
+
+div#card2, div#card5{
+    margin-left: 80px;
+    border-radius: 25px;
+}
+
+div#card1, div#card3,div#card4,div#card6{
+    border-radius: 25px;
+}
+
+div#card3, div#card6{
+    margin-left: 80px;
+}
+
+div#card1 h5,div#card1 p,
+div#card2 h5,div#card2 p,
+div#card3 h5,div#card3 p,
+div#card4 h5,div#card4 p,
+div#card5 h5,div#card5 p,
+div#card6 h5,div#card6 p{
+    text-align: center;
+}
+
+#btnLixo, #btnMoradores{
+    background-color: #ffffff;
+}

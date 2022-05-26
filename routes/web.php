@@ -22,4 +22,6 @@ Route::get('/', [EventController::class, 'index']);
 
 Route::get('/lixo', [EventController::class, 'lixo']);
 
+Route::get('/moradores', [EventController::class, 'moradores']);
+
 Route::post('/lixo', [EventController::class, 'lixoteste']);

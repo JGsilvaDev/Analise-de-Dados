@@ -96,16 +96,13 @@
         <footer>
         
         </footer>
-        
 
         <script>
             $("#formChart").on( "submit", function(e) {
             
             var dataString = $("#TipoTabela").val();
             var capitais = $("#Capitais").val();
-
-            console.log('AJAX mandando datastring= ' + dataString+ ' e capitais = ' + capitais)
-
+            
             $.ajax({
             type: "GET",
             url: "lixo",
@@ -238,56 +235,34 @@
                     $("#reload").show();
                     $("#botaoGrafico").show();    
 
-                    if(selectFiltro == "Coeficiente de variacao - Domicilios com lixo coletado por servico de limpeza (%)"){
+                    if(selectFiltro == " Densidade de moradores por domicilio (Pessoas)"){
                         chart.config.type = [selectGrafico];
                         chart.data.datasets[0].data = [selectD];
                         chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Coeficiente de variacao"];
+                        chart.data.datasets[0].label = ["Densidade de Moradores"];
                         chart.update();
 
-                    }else if(selectFiltro == "Coeficiente de variacao - Percentual de domicilios com lixo coletado por servico de limpeza (%)"){
+                    }else if(selectFiltro == " Densidade de moradores por domicilio, considerando um intervalo de confianca de 95% - limite inferior (Pessoas)"){
                         chart.config.type = [selectGrafico];
                         chart.data.datasets[0].data = [selectD];
                         chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Coeficiente de variacao"];
+                        chart.data.datasets[0].label = ["Densidade de Moradores, considerando intervalo inferior"];
                         chart.update();
 
-                    }else if(selectFiltro == "Domicilios com lixo coletado por serviio de limpeza (Mil domicilios)"){
+                    }else if(selectFiltro == " Densidade de moradores por domicilio, considerando um intervalo de confianca de 95% - limite superior (Pessoas)"){
                         chart.config.type = [selectGrafico];
                         chart.data.datasets[0].data = [selectD];
                         chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Domicilios com lixo coletado"];
+                        chart.data.datasets[0].label = ["Densidade de Moradores, considerando intervalo superior"];
                         chart.update();
 
-                    }else if(selectFiltro == "Domicilios com lixo coletado por servico de limpeza, considerando um intervalo de confianca de 95% - limite inferior (Mil domicilios)"){
+                    }else if(selectFiltro == " Coeficiente de variacao - Densidade de moradores por domicilio (%)"){
                         chart.config.type = [selectGrafico];
                         chart.data.datasets[0].data = [selectD];
                         chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Domicilios com lixo coletado"];
-                        chart.update();
-
-                    }else if(selectFiltro == "Percentual de domicilios com lixo coletado por servico de limpeza (%)"){
-                        chart.config.type = [selectGrafico];
-                        chart.data.datasets[0].data = [selectD];
-                        chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Percentual de domicilios com lixo coletado"];
-                        chart.update();
-
-                    }else if(selectFiltro == "Percentual de domicilios com lixo coletado por servico de limpeza, considerando um intervalo de confianca de 95% - limite inferior (%)"){
-                        chart.config.type = [selectGrafico];
-                        chart.data.datasets[0].data = [selectD];
-                        chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Percentual de domicilios com lixo coletado"];
-                        chart.update();
-
-                    }else if(selectFiltro == "Percentual de domicilios com lixo coletado por servico de limpeza, considerando um intervalo de confianca de 95% - limite superior (%)"){
-                        chart.config.type = [selectGrafico];
-                        chart.data.datasets[0].data = [selectD];
-                        chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Percentual de domicilios com lixo coletado"];
+                        chart.data.datasets[0].label = ["Coeficiente de variação"];
                         chart.update();
                     }
-                    
                 }  
             };
 
