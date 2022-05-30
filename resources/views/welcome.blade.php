@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title','Health Info')
+@section('title','Data Find')
 
 @section('content')
 
@@ -13,9 +13,14 @@
 
 <section id="welcome">
     <header>
-        <div id="imageLogo">
+        {{-- <div id="imageLogo">
             <img src="\img\events\novavLogo2.0.jpeg" alt="Logo do site, Health Info." height="100" >  
-        </div>      
+        </div>       --}}
+
+        <div id="header">
+            <h1>Data Find</h1>
+        </div>
+
     </header>
 
     <div class="container" id="containerCards">
@@ -23,7 +28,7 @@
             <div class="card" id="card1" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Lixo<button class="btn btn-light float-end btn-sm" id="btnLixo">...</button></h5>
-                    <p class="card-text">Esse card contem algo relacionado a lixo</p>
+                    <p class="card-text">Esse card contém informações relacionado a lixo</p>
                 </div>
                     <a href="/lixo" class="btn btn-dark">Acesse mais</a>
                     <p></p>
@@ -32,7 +37,7 @@
             <div class="card" id="card2" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Densidade de Moradia<button class="btn btn-light float-end btn-sm" id="btnMoradores">...</button></h5>
-                    <p class="card-text">Esse card contem algo relacionado a densidade de moradores</p>
+                    <p class="card-text">Esse card contém informções relacionado a densidade de moradores</p>
                 </div>
                     <a href="/moradores" class="btn btn-dark">Acesse mais</a>
                     <p></p>
@@ -40,10 +45,10 @@
 
             <div class="card" id="card3" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">Lixo</h5>
-                    <p class="card-text">Esse card contem algo realcionado a lixo</p>     
+                    <h5 class="card-title">Rendimento Populacional por tipo<button class="btn btn-light float-end btn-sm" id="btnRendimento">...</button></h5>
+                    <p class="card-text">Esse card contém informações relacionadas ao redimento populacional por tipo de rendimento</p>     
                 </div>
-                    <a href="#" class="btn btn-dark">Acesse mais</a>
+                    <a href="/Rendimento" class="btn btn-dark">Acesse mais</a>
                     <p></p>
             </div>
         </div>
@@ -53,28 +58,28 @@
         <div class="row">
             <div class="card" id="card4" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">Lixo</h5>
-                    <p class="card-text">Esse card contem algo realcionado a lixo</p>
+                    <h5 class="card-title">Higiene e Saúde Bucal<button class="btn btn-light float-end btn-sm" id="btnSaudeBucal">...</button></h5>
+                    <p class="card-text">Esse card contém informações sobre higiene e saúde bocal</p>
                 </div>
-                    <a href="/lixo" class="btn btn-dark">Acesse mais</a>
+                    <a href="/saudebucal" class="btn btn-dark">Acesse mais</a>
                     <p></p>
             </div>
 
             <div class="card" id="card5" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">Lixo</h5>
-                    <p class="card-text">Esse card contem algo realcionado a lixo</p>
+                    <h5 class="card-title">Saúde Mental<button class="btn btn-light float-end btn-sm" id="btnSaudeMental">...</button></h5>
+                    <p class="card-text">Esse card contém informações sobre saúde mental</p>
                 </div>
-                <a href="/lixo" class="btn btn-dark">Acesse mais</a>
+                <a href="/saudemental" class="btn btn-dark">Acesse mais</a>
                 <p></p>
             </div>
 
             <div class="card" id="card6" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">Lixo</h5>
-                    <p class="card-text">Esse card contem algo realcionado a lixo</p>
+                    <h5 class="card-title">Estudantes<button class="btn btn-light float-end btn-sm" id="btnEstudantes">...</button></h5>
+                    <p class="card-text">Esse card contém informações relacionadas aos estudantes</p>
                 </div>
-                    <a href="#" class="btn btn-dark">Acesse mais</a>
+                    <a href="/estudantes" class="btn btn-dark">Acesse mais</a>
                     <p></p>
             </div>
         </div>

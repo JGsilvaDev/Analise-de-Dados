@@ -1,8 +1,8 @@
 /* General */
 
 
-* {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+*{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol','UnifrakturCook';
 }
 
 
@@ -50,6 +50,10 @@ section#welcome{
         rgba(252, 70, 107, 1) 100%
     );*/
     font-family: "Courier New";
+}
+
+section#welcome h1{
+    font-family: 'fantasy';
 }
 
 #cards-container #voltar {
@@ -259,8 +263,8 @@ footer p {
 /* Header*/
 header{
     text-align: center;
-    color: #8B0000 ;
-    /* padding: 8px; */
+    color: #ffffff ;
+    padding: 8px;
     background-color: #8B0000 ;
 }
 
@@ -318,6 +322,6 @@ div#card6 h5,div#card6 p{
     text-align: center;
 }
 
-#btnLixo, #btnMoradores{
+#btnLixo, #btnMoradores, #btnRendimento, #btnSaudeMental, #btnSaudeBucal, #btnEstudantes{
     background-color: #ffffff;
 }
