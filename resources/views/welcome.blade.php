@@ -114,6 +114,15 @@
                 })
         })
 
+        $('#btnSaudeMental').on('click',function(){
+            Swal.fire({
+                icon: 'info',
+                confirmButtonText: 'Sair',
+                title: 'Detalhes: ',
+                text: 'Esse tema esta relacionado a saúde mental'
+                })
+        })
+
 
 
     </script>

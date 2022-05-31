@@ -22,7 +22,7 @@
                 <a class="float-start" href="\" id="img-home">
                     <img src="img/events/icons-home.svg" height="30" alt="Icone para home">
                 </a>
-                <a class="btn btn-link float-end" href="\lixo" role="button" id="reload"><i class='bx bx-arrow-back bx-md' 
+                <a class="btn btn-link float-end" href="\saudemental" role="button" id="reload"><i class='bx bx-arrow-back bx-md' 
                     style='color:#ffffff'></i></a>
             </label>
             <label>
@@ -96,16 +96,13 @@
         <footer>
         
         </footer>
-        
 
         <script>
             $("#formChart").on( "submit", function(e) {
             
             var dataString = $("#TipoTabela").val();
             var capitais = $("#Capitais").val();
-
-            console.log('AJAX mandando datastring= ' + dataString+ ' e capitais = ' + capitais)
-
+            
             $.ajax({
             type: "GET",
             url: "lixo",
@@ -210,7 +207,6 @@
                     }
                 }
             });
-
             
 
             function updateChart(){
@@ -238,56 +234,56 @@
                     $("#reload").show();
                     $("#botaoGrafico").show();    
 
-                    if(selectFiltro == "Coeficiente de variacao - Domicilios com lixo coletado por servico de limpeza (%)"){
+                    if(selectFiltro == "Percentual de escolares de 13 a 17 anos que nao tem amigos proximos"){
                         chart.config.type = [selectGrafico];
                         chart.data.datasets[0].data = [selectD];
                         chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Coeficiente de variacao"];
+                        chart.data.datasets[0].label = ["Percentual de escolares de 13 a 17 anos que nao tem amigos proximos"];
                         chart.update();
 
-                    }else if(selectFiltro == "Coeficiente de variacao - Percentual de domicilios com lixo coletado por servico de limpeza (%)"){
+                    }else if(selectFiltro == "Percentual de escolares de 13 a 17 anos que se sentiram muito preocupados com as coisas comuns do dia a dia na maioria das vezes ou sempre, nos 30 dias anteriores a pesquisa"){
                         chart.config.type = [selectGrafico];
                         chart.data.datasets[0].data = [selectD];
                         chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Coeficiente de variacao"];
+                        chart.data.datasets[0].label = ["Percentual de escolares de 13 a 17 anos que se sentiram muito preocupados"];
                         chart.update();
 
-                    }else if(selectFiltro == "Domicilios com lixo coletado por serviio de limpeza (Mil domicilios)"){
+                    }else if(selectFiltro == "Percentual de escolares de 13 a 17 anos que se sentiram tristes na maioria das vezes ou sempre, nos 30 dias anteriores a pesquisa"){
                         chart.config.type = [selectGrafico];
                         chart.data.datasets[0].data = [selectD];
                         chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Domicilios com lixo coletado"];
+                        chart.data.datasets[0].label = ["Percentual de escolares de 13 a 17 anos que se sentiram tristes na maioria das vezes ou sempre"];
                         chart.update();
 
-                    }else if(selectFiltro == "Domicilios com lixo coletado por servico de limpeza, considerando um intervalo de confianca de 95% - limite inferior (Mil domicilios)"){
+                    }else if(selectFiltro == "Percentual de escolares de 13 a 17 anos que sentiram que ninguem se preocupava com eles(as) na maioria das vezes ou sempre, nos 30 dias anteriores a pesquisa"){
                         chart.config.type = [selectGrafico];
                         chart.data.datasets[0].data = [selectD];
                         chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Domicilios com lixo coletado"];
+                        chart.data.datasets[0].label = ["Percentual de escolares de 13 a 17 anos que sentiram que ninguem se preocupava com eles(as)"];
                         chart.update();
 
-                    }else if(selectFiltro == "Percentual de domicilios com lixo coletado por servico de limpeza (%)"){
+                    }else if(selectFiltro == "Percentual de escolares de 13 a 17 anos que se sentiram irritados, nervosos ou mal-humorados na maioria das vezes ou sempre, nos 30 dias anteriores a pesquisa "){
                         chart.config.type = [selectGrafico];
                         chart.data.datasets[0].data = [selectD];
                         chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Percentual de domicilios com lixo coletado"];
+                        chart.data.datasets[0].label = ["Percentual de escolares de 13 a 17 anos que se sentiram irritados, nervosos ou mal-humorados"];
                         chart.update();
 
-                    }else if(selectFiltro == "Percentual de domicilios com lixo coletado por servico de limpeza, considerando um intervalo de confianca de 95% - limite inferior (%)"){
+                    }else if(selectFiltro == "Percentual de escolares de 13 a 17 anos que sentiram que a vida nao vale a pena ser vivida na maioria das vezes ou sempre, nos 30 dias anteriores a pesquisa"){
                         chart.config.type = [selectGrafico];
                         chart.data.datasets[0].data = [selectD];
                         chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Percentual de domicilios com lixo coletado"];
+                        chart.data.datasets[0].label = ["Percentual de escolares de 13 a 17 anos que sentiram que a vida nao vale a pena ser vivida"];
                         chart.update();
 
-                    }else if(selectFiltro == "Percentual de domicilios com lixo coletado por servico de limpeza, considerando um intervalo de confianca de 95% - limite superior (%)"){
+                    }else if(selectFiltro == "Percentual de escolares de 13 a 17 anos cuja autoavaliacao em saude mental foi negativa, nos 30 dias anteriores a pesquisa"){
                         chart.config.type = [selectGrafico];
                         chart.data.datasets[0].data = [selectD];
                         chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Percentual de domicilios com lixo coletado"];
+                        chart.data.datasets[0].label = ["Percentual de escolares de 13 a 17 anos cuja autoavaliacao em saude mental foi negativa"];
                         chart.update();
                     }
-                    
+
                 }  
             };
 

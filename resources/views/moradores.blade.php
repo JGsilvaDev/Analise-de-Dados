@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Health Info')
+@section('title', 'Data Find')
 
 @section('content')
 
@@ -22,7 +22,7 @@
                 <a class="float-start" href="\" id="img-home">
                     <img src="img/events/icons-home.svg" height="30" alt="Icone para home">
                 </a>
-                <a class="btn btn-link float-end" href="\lixo" role="button" id="reload"><i class='bx bx-arrow-back bx-md' 
+                <a class="btn btn-link float-end" href="\moradores" role="button" id="reload"><i class='bx bx-arrow-back bx-md' 
                     style='color:#ffffff'></i></a>
             </label>
             <label>
