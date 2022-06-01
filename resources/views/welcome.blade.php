@@ -76,10 +76,10 @@
 
             <div class="card" id="card6" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">Estudantes<button class="btn btn-light float-end btn-sm" id="btnEstudantes">...</button></h5>
-                    <p class="card-text">Esse card contém informações relacionadas aos estudantes</p>
+                    <h5 class="card-title">Escolas<button class="btn btn-light float-end btn-sm" id="btnEscolas">...</button></h5>
+                    <p class="card-text">Esse card contém informações relacionadas ao escolas</p>
                 </div>
-                    <a href="/estudantes" class="btn btn-dark">Acesse mais</a>
+                    <a href="/escolas" class="btn btn-dark">Acesse mais</a>
                     <p></p>
             </div>
         </div>
@@ -123,6 +123,23 @@
                 })
         })
 
+        $('#btnSaudeBucal').on('click',function(){
+            Swal.fire({
+                icon: 'info',
+                confirmButtonText: 'Sair',
+                title: 'Detalhes: ',
+                text: 'Esse tema esta relacionado a saúde bucal'
+                })
+        })
+
+        $('#btnEscolas').on('click',function(){
+            Swal.fire({
+                icon: 'info',
+                confirmButtonText: 'Sair',
+                title: 'Detalhes: ',
+                text: 'Esse tema esta relacionado a água potavel nas escolas, banheiros em condição de uso e lixo removido'
+                })
+        })
 
 
     </script>

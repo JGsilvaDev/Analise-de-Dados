@@ -26,4 +26,8 @@ Route::get('/moradores', [EventController::class, 'moradores']);
 
 Route::get('/saudemental', [EventController::class, 'saudemental']);
 
+Route::get('/saudebucal', [EventController::class, 'saudebucal']);
+
+Route::get('/escolas', [EventController::class, 'escolas']);
+
 Route::post('/lixo', [EventController::class, 'lixoteste']);

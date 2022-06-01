@@ -22,7 +22,7 @@
                 <a class="float-start" href="\" id="img-home">
                     <img src="img/events/icons-home.svg" height="30" alt="Icone para home">
                 </a>
-                <a class="btn btn-link float-end" href="\lixo" role="button" id="reload"><i class='bx bx-arrow-back bx-md' 
+                <a class="btn btn-link float-end" href="\escolas" role="button" id="reload"><i class='bx bx-arrow-back bx-md' 
                     style='color:#ffffff'></i></a>
             </label>
             <label>
@@ -96,16 +96,13 @@
         <footer>
         
         </footer>
-        
 
         <script>
             $("#formChart").on( "submit", function(e) {
             
             var dataString = $("#TipoTabela").val();
             var capitais = $("#Capitais").val();
-
-            console.log('AJAX mandando datastring= ' + dataString+ ' e capitais = ' + capitais)
-
+            
             $.ajax({
             type: "GET",
             url: "lixo",
@@ -210,7 +207,6 @@
                     }
                 }
             });
-
             
 
             function updateChart(){
@@ -238,56 +234,43 @@
                     $("#reload").show();
                     $("#botaoGrafico").show();    
 
-                    if(selectFiltro == "Coeficiente de variacao - Domicilios com lixo coletado por servico de limpeza (%)"){
+                    if(selectFiltro == "Percentual de escolares de 13 a 17 anos em escolas que informaram possuir agua potavel (%)"){
                         chart.config.type = [selectGrafico];
                         chart.data.datasets[0].data = [selectD];
                         chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Coeficiente de variação - Domicilios com lixo"];
+                        chart.data.datasets[0].label = ["Percentual de escolares de 13 a 17 anos em escolas que informaram possuir agua potável"];
                         chart.update();
 
-                    }else if(selectFiltro == "Coeficiente de variacao - Percentual de domicilios com lixo coletado por servico de limpeza (%)"){
+                    }else if(selectFiltro == "Percentual de escolares de 13 a 17 anos, por principal fonte de agua potavel em suas escolas (%)"){
                         chart.config.type = [selectGrafico];
                         chart.data.datasets[0].data = [selectD];
                         chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Coeficiente de variação - Percentual de domicilios"];
+                        chart.data.datasets[0].label = ["Percentual de escolares de 13 a 17 anos, por principal fonte de agua potavel em suas escolas"];
                         chart.update();
 
-                    }else if(selectFiltro == "Domicilios com lixo coletado por serviio de limpeza (Mil domicilios)"){
+                    }else if(selectFiltro == "Percentual de escolares de 13 a 17 anos em escolas cuja agua foi testada quanto a sua potabilidade nos 12 meses anteriores a pesquisa (%)"){
                         chart.config.type = [selectGrafico];
                         chart.data.datasets[0].data = [selectD];
                         chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Domicilios com lixo coletado"];
+                        chart.data.datasets[0].label = ["Percentual de escolares de 13 a 17 anos em escolas cuja agua foi testada quanto a sua potabilidade"];
                         chart.update();
 
-                    }else if(selectFiltro == "Domicilios com lixo coletado por servico de limpeza, considerando um intervalo de confianca de 95% - limite inferior (Mil domicilios)"){
+                    }else if(selectFiltro == "Percentual de escolares de 13 a 17 anos em escolas que informaram possuir banheiros em condicoes de uso (%)"){
                         chart.config.type = [selectGrafico];
                         chart.data.datasets[0].data = [selectD];
                         chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Domicilios com lixo coletado, considerando o limite inferior"];
+                        chart.data.datasets[0].label = ["Percentual de escolares de 13 a 17 anos em escolas que informaram possuir banheiros em condicoes de uso"];
                         chart.update();
 
-                    }else if(selectFiltro == "Percentual de domicilios com lixo coletado por servico de limpeza (%)"){
+                    }else if(selectFiltro == "Percentual de escolares de 13 a 17 anos em escolas que informaram ter removido o lixo de seus espacos internos menos de tres vezes na semana anterior a pesquisa (%)"){
                         chart.config.type = [selectGrafico];
                         chart.data.datasets[0].data = [selectD];
                         chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Percentual de domicilios com lixo coletado"];
+                        chart.data.datasets[0].label = ["Percentual de escolares de 13 a 17 anos em escolas que informaram ter removido o lixo de seus espaços internos"];
                         chart.update();
 
-                    }else if(selectFiltro == "Percentual de domicilios com lixo coletado por servico de limpeza, considerando um intervalo de confianca de 95% - limite inferior (%)"){
-                        chart.config.type = [selectGrafico];
-                        chart.data.datasets[0].data = [selectD];
-                        chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Percentual de domicilios com lixo coletado, considerando o limite inferior"];
-                        chart.update();
-
-                    }else if(selectFiltro == "Percentual de domicilios com lixo coletado por servico de limpeza, considerando um intervalo de confianca de 95% - limite superior (%)"){
-                        chart.config.type = [selectGrafico];
-                        chart.data.datasets[0].data = [selectD];
-                        chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Percentual de domicilios com lixo coletado, considerando o limite superior"];
-                        chart.update();
                     }
-                    
+
                 }  
             };
 

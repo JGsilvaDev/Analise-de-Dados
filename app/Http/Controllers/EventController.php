@@ -105,4 +105,56 @@ class EventController extends Controller
         ]);
     }
 
+    public function saudebucal(Request $request){
+
+        $capitaisName4 =  DB::table('todas_capitais4')
+                        ->select('Nome_Capitais','Nome_tabela','Regiao','Total')
+                        ->orderBy('Nome_Capitais','asc')
+                        ->get();
+
+
+        $dados4 = DB::table("nome_tabelas")  
+                ->select('id','nome_tabelas')
+                ->where('id','>','22')
+                ->where('id','<','29')
+                ->orderBy('id','asc')
+                ->get();  
+
+        $total4 = DB::table('todas_capitais4')
+                ->select('Nome_Capitais','Total','Nome_tabela')
+                ->get();
+
+        return view('saudebucal',[
+            'capitaisName'=> $capitaisName4,
+            'dados' => $dados4,
+            'total' => $total4,
+        ]);
+    }
+
+    public function escolas(Request $request){
+
+        $capitaisName6 =  DB::table('todas_capitais6')
+                        ->select('Nome_Capitais','Nome_tabela','Regiao','Total')
+                        ->orderBy('Nome_Capitais','asc')
+                        ->get();
+
+
+        $dados6 = DB::table("nome_tabelas")  
+                ->select('id','nome_tabelas')
+                ->where('id','>','28')
+                ->where('id','<','34')
+                ->orderBy('id','asc')
+                ->get();  
+
+        $total6 = DB::table('todas_capitais6')
+                ->select('Nome_Capitais','Total','Nome_tabela')
+                ->get();
+
+        return view('escolas',[
+            'capitaisName'=> $capitaisName6,
+            'dados' => $dados6,
+            'total' => $total6,
+        ]);
+    }
+
 }//fim do class event controler

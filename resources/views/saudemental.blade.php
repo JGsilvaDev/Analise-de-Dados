@@ -280,7 +280,7 @@
                         chart.config.type = [selectGrafico];
                         chart.data.datasets[0].data = [selectD];
                         chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Percentual de escolares de 13 a 17 anos cuja autoavaliacao em saude mental foi negativa"];
+                        chart.data.datasets[0].label = ["Percentual de escolares de 13 a 17 anos cuja autoavaliação em saude mental foi negativa"];
                         chart.update();
                     }
 
