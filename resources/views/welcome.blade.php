@@ -37,7 +37,7 @@
             <div class="card" id="card2" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Densidade de Moradia<button class="btn btn-light float-end btn-sm" id="btnMoradores">...</button></h5>
-                    <p class="card-text">Esse card contém informções relacionado a densidade de moradores</p>
+                    <p class="card-text">Esse card contém informações relacionado a densidade de moradores</p>
                 </div>
                     <a href="/moradores" class="btn btn-dark">Acesse mais</a>
                     <p></p>
@@ -110,7 +110,7 @@
                 icon: 'info',
                 confirmButtonText: 'Sair',
                 title: 'Detalhes: ',
-                text: 'Esse tema esta relacionado a densidade de moradores por domicilio'
+                text: 'Esse tema esta relacionado a densidade de moradores por domicilio e seu coeficiente'
                 })
         })
 
@@ -128,7 +128,7 @@
                 icon: 'info',
                 confirmButtonText: 'Sair',
                 title: 'Detalhes: ',
-                text: 'Esse tema esta relacionado a saúde bucal'
+                text: 'Esse tema esta relacionado a higiene e saúde bucal'
                 })
         })
 

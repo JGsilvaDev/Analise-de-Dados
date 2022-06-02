@@ -63,10 +63,10 @@
                     <input type="hidden" name="teste" value="1">
 
                     <div class="pt-2">
-                        <button type="button" class="btn btn-primary btn-sm" onclick="addValue()" id="botaoAdicionar">ADD</button>
+                        <button type="button" class="btn btn-primary btn-sm" onclick="addValue()" id="botaoAdicionar">ADICIONAR</button>
                         <button type="button" class="btn btn-info btn-sm" onclick="addGrafico()" id="botaoGrafico" 
                                 style='color:#ffffff'>MUDAR GRAFICO</button>
-                        <button type="button" class="btn btn-danger btn-sm" onclick="popValue()" id="botaoPop">REMOVE</button>
+                        <button type="button" class="btn btn-danger btn-sm" onclick="popValue()" id="botaoPop">REMOVER</button>
 
                     </div>
                         <select name="Dados" id = "Dados" size="1" width="195" tabindex="1">

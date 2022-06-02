@@ -63,10 +63,10 @@
                     <input type="hidden" name="teste" value="1">
 
                     <div class="pt-2">
-                        <button type="button" class="btn btn-primary btn-sm" onclick="addValue()" id="botaoAdicionar">ADD</button>
+                        <button type="button" class="btn btn-primary btn-sm" onclick="addValue()" id="botaoAdicionar">ADICIONAR</button>
                         <button type="button" class="btn btn-info btn-sm" onclick="addGrafico()" id="botaoGrafico" 
                                 style='color:#ffffff'>MUDAR GRAFICO</button>
-                        <button type="button" class="btn btn-danger btn-sm" onclick="popValue()" id="botaoPop">REMOVE</button>
+                        <button type="button" class="btn btn-danger btn-sm" onclick="popValue()" id="botaoPop">REMOVER</button>
 
                     </div>
                         <select name="Dados" id = "Dados" size="1" width="195" tabindex="1">
@@ -181,22 +181,22 @@
                     labels: ['January','February','March','April','May'],                        
                     datasets: [{
                         label: 'Exemplo',
-                        backgroundColor: ['rgb(255, 255, 0)',  
-                                          'rgb(51, 51, 255)',
-                                          'rgb(255, 128, 0)',
-                                          'rgb(153, 73, 0)',
-                                          'rgb(128, 128, 128)',
-                                          'rgb(76, 0, 153)',
-                                          'rgb(0, 255, 0)',
-                                          'rgb(255, 0, 0)'],
-                        borderColor: ['rgb(255, 255, 0)',  
-                                          'rgb(51, 51, 255)',
-                                          'rgb(255, 128, 0)',
-                                          'rgb(153, 73, 0)',
-                                          'rgb(128, 128, 128)',
-                                          'rgb(76, 0, 153)',
-                                          'rgb(0, 255, 0)',
-                                          'rgb(255, 0, 0)'],
+                        backgroundColor: ['rgb(255, 69, 0)',  
+                                          'rgb(65, 105, 225)',
+                                          'rgb(102, 205, 170)',
+                                          'rgb(244, 164, 96)',
+                                          'rgb(218, 165, 32)',
+                                          'rgb(128, 0, 0)',
+                                          'rgb(255, 140, 0)',
+                                          'rgb(255, 99, 71)'],
+                        borderColor: ['rgb(255, 69, 0)',  
+                                          'rgb(65, 105, 225)',
+                                          'rgb(102, 205, 170)',
+                                          'rgb(244, 164, 96)',
+                                          'rgb(218, 165, 32)',
+                                          'rgb(128, 0, 0)',
+                                          'rgb(255, 140, 0)',
+                                          'rgb(255, 99, 71)'],
                         data: exemplo ,
                     }]
                 }, 
@@ -238,49 +238,49 @@
                         chart.config.type = [selectGrafico];
                         chart.data.datasets[0].data = [selectD];
                         chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Percentual de escolares de 13 a 17 anos que nao tem amigos proximos"];
+                        chart.data.datasets[0].label = ["Percentual de escolares que nao tem amigos proximos"];
                         chart.update();
 
                     }else if(selectFiltro == "Percentual de escolares de 13 a 17 anos que se sentiram muito preocupados com as coisas comuns do dia a dia na maioria das vezes ou sempre, nos 30 dias anteriores a pesquisa"){
                         chart.config.type = [selectGrafico];
                         chart.data.datasets[0].data = [selectD];
                         chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Percentual de escolares de 13 a 17 anos que se sentiram muito preocupados"];
+                        chart.data.datasets[0].label = ["Percentual de escolares que se sentiram muito preocupados"];
                         chart.update();
 
                     }else if(selectFiltro == "Percentual de escolares de 13 a 17 anos que se sentiram tristes na maioria das vezes ou sempre, nos 30 dias anteriores a pesquisa"){
                         chart.config.type = [selectGrafico];
                         chart.data.datasets[0].data = [selectD];
                         chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Percentual de escolares de 13 a 17 anos que se sentiram tristes na maioria das vezes ou sempre"];
+                        chart.data.datasets[0].label = ["Percentual de escolares que se sentiram tristes na maioria das vezes ou sempre"];
                         chart.update();
 
                     }else if(selectFiltro == "Percentual de escolares de 13 a 17 anos que sentiram que ninguem se preocupava com eles(as) na maioria das vezes ou sempre, nos 30 dias anteriores a pesquisa"){
                         chart.config.type = [selectGrafico];
                         chart.data.datasets[0].data = [selectD];
                         chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Percentual de escolares de 13 a 17 anos que sentiram que ninguem se preocupava com eles(as)"];
+                        chart.data.datasets[0].label = ["Percentual de escolares que sentiram que ninguem se preocupava com eles(as)"];
                         chart.update();
 
                     }else if(selectFiltro == "Percentual de escolares de 13 a 17 anos que se sentiram irritados, nervosos ou mal-humorados na maioria das vezes ou sempre, nos 30 dias anteriores a pesquisa "){
                         chart.config.type = [selectGrafico];
                         chart.data.datasets[0].data = [selectD];
                         chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Percentual de escolares de 13 a 17 anos que se sentiram irritados, nervosos ou mal-humorados"];
+                        chart.data.datasets[0].label = ["Percentual de escolares que se sentiram irritados, nervosos ou mal-humorados"];
                         chart.update();
 
                     }else if(selectFiltro == "Percentual de escolares de 13 a 17 anos que sentiram que a vida nao vale a pena ser vivida na maioria das vezes ou sempre, nos 30 dias anteriores a pesquisa"){
                         chart.config.type = [selectGrafico];
                         chart.data.datasets[0].data = [selectD];
                         chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Percentual de escolares de 13 a 17 anos que sentiram que a vida nao vale a pena ser vivida"];
+                        chart.data.datasets[0].label = ["Percentual de escolares que sentiram que a vida nao vale a pena ser vivida"];
                         chart.update();
 
                     }else if(selectFiltro == "Percentual de escolares de 13 a 17 anos cuja autoavaliacao em saude mental foi negativa, nos 30 dias anteriores a pesquisa"){
                         chart.config.type = [selectGrafico];
                         chart.data.datasets[0].data = [selectD];
                         chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Percentual de escolares de 13 a 17 anos cuja autoavaliação em saude mental foi negativa"];
+                        chart.data.datasets[0].label = ["Percentual de escolares cuja autoavaliação em saude mental foi negativa"];
                         chart.update();
                     }
 

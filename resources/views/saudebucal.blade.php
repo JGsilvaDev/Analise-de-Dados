@@ -63,10 +63,10 @@
                     <input type="hidden" name="teste" value="1">
 
                     <div class="pt-2">
-                        <button type="button" class="btn btn-primary btn-sm" onclick="addValue()" id="botaoAdicionar">ADD</button>
+                        <button type="button" class="btn btn-primary btn-sm" onclick="addValue()" id="botaoAdicionar">ADICIONAR</button>
                         <button type="button" class="btn btn-info btn-sm" onclick="addGrafico()" id="botaoGrafico" 
                                 style='color:#ffffff'>MUDAR GRAFICO</button>
-                        <button type="button" class="btn btn-danger btn-sm" onclick="popValue()" id="botaoPop">REMOVE</button>
+                        <button type="button" class="btn btn-danger btn-sm" onclick="popValue()" id="botaoPop">REMOVER</button>
 
                     </div>
                         <select name="Dados" id = "Dados" size="1" width="195" tabindex="1">
@@ -181,22 +181,22 @@
                     labels: ['January','February','March','April','May'],                        
                     datasets: [{
                         label: 'Exemplo',
-                        backgroundColor: ['rgb(255, 255, 0)',  
-                                          'rgb(51, 51, 255)',
-                                          'rgb(255, 128, 0)',
-                                          'rgb(153, 73, 0)',
-                                          'rgb(128, 128, 128)',
-                                          'rgb(76, 0, 153)',
-                                          'rgb(0, 255, 0)',
-                                          'rgb(255, 0, 0)'],
-                        borderColor: ['rgb(255, 255, 0)',  
-                                          'rgb(51, 51, 255)',
-                                          'rgb(255, 128, 0)',
-                                          'rgb(153, 73, 0)',
-                                          'rgb(128, 128, 128)',
-                                          'rgb(76, 0, 153)',
-                                          'rgb(0, 255, 0)',
-                                          'rgb(255, 0, 0)'],
+                        backgroundColor: ['rgb(0, 128, 128)',  
+                                          'rgb(0, 139, 139)',
+                                          'rgb(95, 158, 160)',
+                                          'rgb(32, 178, 170)',
+                                          'rgb(0, 206, 209)',
+                                          'rgb(72, 209, 204)',
+                                          'rgb(64, 224, 208)',
+                                          'rgb(175, 238, 238)'],
+                        borderColor: ['rgb(0, 128, 128)',  
+                                          'rgb(0, 139, 139)',
+                                          'rgb(95, 158, 160)',
+                                          'rgb(32, 178, 170)',
+                                          'rgb(0, 206, 209)',
+                                          'rgb(72, 209, 204)',
+                                          'rgb(64, 224, 208)',
+                                          'rgb(175, 238, 238)'],
                         data: exemplo ,
                     }]
                 }, 

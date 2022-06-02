@@ -22,7 +22,7 @@
                 <a class="float-start" href="\" id="img-home">
                     <img src="img/events/icons-home.svg" height="30" alt="Icone para home">
                 </a>
-                <a class="btn btn-link float-end" href="\escolas" role="button" id="reload"><i class='bx bx-arrow-back bx-md' 
+                <a class="btn btn-link float-end" href="\Rendimento" role="button" id="reload"><i class='bx bx-arrow-back bx-md' 
                     style='color:#ffffff'></i></a>
             </label>
             <label>
@@ -181,22 +181,22 @@
                     labels: ['January','February','March','April','May'],                        
                     datasets: [{
                         label: 'Exemplo',
-                        backgroundColor: ['rgb(75, 0, 130)',  
-                                          'rgb(128, 0, 128)',
-                                          'rgb(25, 25, 112)',
-                                          'rgb(255, 105, 180)',
-                                          'rgb(0, 0, 128)',
-                                          'rgb(0, 191, 255)',
-                                          'rgb(135, 206, 235)',
-                                          'rgb(199, 21, 133)'],
-                        borderColor: ['rgb(75, 0, 130)',  
-                                          'rgb(128, 0, 128)',
-                                          'rgb(25, 25, 112)',
-                                          'rgb(255, 105, 180)',
-                                          'rgb(0, 0, 128)',
-                                          'rgb(0, 191, 255)',
-                                          'rgb(135, 206, 235)',
-                                          'rgb(199, 21, 133)'],
+                        backgroundColor: ['rgb(169,169,169)',  
+                                          'rgb(172,61,139)',
+                                          'rgb(30,144,255)',
+                                          'rgb(64,224,208)',
+                                          'rgb(0,255,127)',
+                                          'rgb(124,252,0)',
+                                          'rgb(188,143,143)',
+                                          'rgb(176,224,230)'],
+                        borderColor: ['rgb(169,169,169)',  
+                                          'rgb(172,61,139)',
+                                          'rgb(30,144,255)',
+                                          'rgb(64,224,208)',
+                                          'rgb(0,255,127)',
+                                          'rgb(124,252,0)',
+                                          'rgb(188,143,143)',
+                                          'rgb(176,224,230)'],
                         data: exemplo ,
                     }]
                 }, 
@@ -234,39 +234,32 @@
                     $("#reload").show();
                     $("#botaoGrafico").show();    
 
-                    if(selectFiltro == "Percentual de escolares de 13 a 17 anos em escolas que informaram possuir agua potavel (%)"){
+                    if(selectFiltro == "Populacao residente com rendimento"){
                         chart.config.type = [selectGrafico];
                         chart.data.datasets[0].data = [selectD];
                         chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Percentual de escolares de 13 a 17 anos em escolas que informaram possuir agua potável"];
+                        chart.data.datasets[0].label = ["Populacao residente com rendimento"];
                         chart.update();
 
-                    }else if(selectFiltro == "Percentual de escolares de 13 a 17 anos, por principal fonte de agua potavel em suas escolas (%)"){
+                    }else if(selectFiltro == "Coeficiente de variacao - Populacao residente com rendimento"){
                         chart.config.type = [selectGrafico];
                         chart.data.datasets[0].data = [selectD];
                         chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Percentual de escolares de 13 a 17 anos, por principal fonte de agua potavel em suas escolas"];
+                        chart.data.datasets[0].label = ["Coeficiente de variacao - Populacao residente com rendimento"];
                         chart.update();
 
-                    }else if(selectFiltro == "Percentual de escolares de 13 a 17 anos em escolas cuja agua foi testada quanto a sua potabilidade nos 12 meses anteriores a pesquisa (%)"){
+                    }else if(selectFiltro == "Percentual de pessoas com rendimento na populacao residente"){
                         chart.config.type = [selectGrafico];
                         chart.data.datasets[0].data = [selectD];
                         chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Percentual de escolares de 13 a 17 anos em escolas cuja agua foi testada quanto a sua potabilidade"];
+                        chart.data.datasets[0].label = ["Percentual de pessoas com rendimento na populacao residente"];
                         chart.update();
 
-                    }else if(selectFiltro == "Percentual de escolares de 13 a 17 anos em escolas que informaram possuir banheiros em condicoes de uso (%)"){
+                    }else if(selectFiltro == "Coeficiente de variacao - Percentual de pessoas com rendimento na populacao residente"){
                         chart.config.type = [selectGrafico];
                         chart.data.datasets[0].data = [selectD];
                         chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Percentual de escolares de 13 a 17 anos em escolas que informaram possuir banheiros em condicoes de uso"];
-                        chart.update();
-
-                    }else if(selectFiltro == "Percentual de escolares de 13 a 17 anos em escolas que informaram ter removido o lixo de seus espacos internos menos de tres vezes na semana anterior a pesquisa (%)"){
-                        chart.config.type = [selectGrafico];
-                        chart.data.datasets[0].data = [selectD];
-                        chart.data.labels = [selectCapitais];
-                        chart.data.datasets[0].label = ["Percentual de escolares de 13 a 17 anos em escolas que informaram ter removido o lixo de seus espaços internos"];
+                        chart.data.datasets[0].label = ["Coeficiente de variacao - Percentual de pessoas com rendimento na populacao residente"];
                         chart.update();
 
                     }

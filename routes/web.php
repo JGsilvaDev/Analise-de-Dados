@@ -30,4 +30,5 @@ Route::get('/saudebucal', [EventController::class, 'saudebucal']);
 
 Route::get('/escolas', [EventController::class, 'escolas']);
 
-Route::post('/lixo', [EventController::class, 'lixoteste']);
+Route::get('/Rendimento', [EventController::class, 'rendimento']);
+
