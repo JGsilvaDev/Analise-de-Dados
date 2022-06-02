@@ -64,7 +64,7 @@ class EventController extends Controller
         $dados2 = DB::table("nome_tabelas")  
                 ->select('id','nome_tabelas')
                 ->where('id','>','7')
-                ->where('id','<','15')
+                ->where('id','<','12')
                 ->orderBy('id','asc')
                 ->get();  
 
