@@ -88,7 +88,7 @@
     <footer>
         <div id="footerImagens">
             <p>Para mais informações entre em contato com os desenvolvedores 
-                <a href="https://linkr.bio/HealthInfo" target="_blank"><img src="img\events\icon-flickr.png" height="25" alt="Icone para contato"></a> 
+                <a href="https://linkr.bio/dataFind" target="_blank"><img src="img\events\icon-flickr.png" height="25" alt="Icone para contato"></a> 
             </p>
         </div>
     </footer>
